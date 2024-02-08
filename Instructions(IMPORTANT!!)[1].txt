@@ -1,0 +1,6 @@
+Instructions(IMPORTANT!!)
+
+For calculating tranpose
+
+1. Each element should be seperated by space.
+2. Each row should be seperated by ';'
