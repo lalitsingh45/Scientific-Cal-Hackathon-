@@ -18,12 +18,12 @@
         <div class="btns">
 
             <div class="row">
-                <button onclick="backspace()">CE</button>
-                <button onclick="fact()">x!</button>
-                <button class="btn">(</button>
-                <button class="btn">)</button>
-                <button class="btn">%</button>
-                <button onclick="screen.value=''">AC</button>
+                <button onclick="backspace()" id="diff">CE</button>
+                <button onclick="fact()" id="diff">x!</button>
+                <button class="btn" id="diff">(</button>
+                <button class="btn" id="diff">)</button>
+                <button class="btn" id="diff">%</button>
+                <button onclick="screen.value=''" id="diff">AC</button>
             </div>
             <div class="row">
                 <button onclick="sin()">sin</button>
@@ -31,7 +31,7 @@
                 <button class="btn">7</button>
                 <button class="btn">8</button>
                 <button class="btn">9</button>
-                <button class="btn">/</button>
+                <button class="btn"  id="diff">/</button>
             </div>
             <div class="row">
                 <button onclick="cos()">cos</button>
@@ -39,7 +39,7 @@
                 <button class="btn">4</button>
                 <button class="btn">5</button>
                 <button class="btn">6</button>
-                <button class="btn">x</button>
+                <button class="btn" id="diff">x</button>
             </div>
             <div class="row">
                 <button onclick="tan()">tan</button>
@@ -47,7 +47,7 @@
                 <button class="btn">1</button>
                 <button class="btn">2</button>
                 <button class="btn">3</button>
-                <button class="btn">-</button>
+                <button class="btn" id="diff">-</button>
             </div>
             <div class="row">
                 <button onclick="e()">e</button>
@@ -55,7 +55,7 @@
                 <button class="btn">0</button>
                 <button class="btn">.</button>
                 <button onclick="screen.value=eval(screen.value)" id="eval">=</button>
-                <button class="btn">+</button>
+                <button class="btn" id="diff">+</button>
             </div>
             <div class="row">
                 <button onclick="pow()">x<sup>3</sup></button>
@@ -69,14 +69,10 @@
             <div class="row">
                 <button onclick="transpose()">Tranpose</button>
                 <button onclick="inverse()">Inverse</button>
-                <button onclick="determinant()">Deter minant</button>
+                <button onclick="convertToKilometers()">m to km</button>
                 <button onclick="gravitationalConstant()">Gravita Cons</button>
                 <button onclick="convertToMeters()">Convert to Meters</button>
                 <button onclick="speedOfLight()">Speed of Light</button>
-            </div>
-            <div class="row">
-                <button onclick="convertToKilometers()">m to km</button>
-                <button onclick="speedOfLight()">c</button>
             </div>
             
         </div>

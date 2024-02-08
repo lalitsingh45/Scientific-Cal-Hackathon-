@@ -10,12 +10,17 @@ for (item of btn) {
         screen.value += btntext;
     });
 }
-
 function sin() {
-    screen.value = Math.sin(screen.value);
+    let angle = parseFloat(document.getElementById("screen").value.trim());
+    let radians = angle * Math.PI / 180;
+    let result = Math.sin(radians);
+    document.getElementById("screen").value = result;
 }
 function cos() {
-    screen.value = Math.cos(screen.value);
+    let angle = parseFloat(document.getElementById("screen").value.trim());
+    let radians = angle * Math.PI / 180;
+    let result = Math.cos(radians);
+    document.getElementById("screen").value = result;
 }
 function tan() {
     screen.value = Math.tan(screen.value);
@@ -36,19 +41,15 @@ function e() {
     screen.value = 2.71828182846;
 }
 function fact() {
-
     var i, num, f;
     f = 1
     num = screen.value;
     for (i = 1; i <= num; i++) {
         f = f * i;
     }
-
     i = i - 1;
-
     screen.value = f;
 }
-
 function backspace() {
     screen.value = screen.value.substr(0, screen.value.length - 1);
 }
@@ -59,28 +60,44 @@ function clearMatrix() {
 }
 
 function speedOfLight() {
-    document.getElementById("screen").value = 299792458; // Speed of light in meters per second
+    document.getElementById("screen").value = 299792458;
 }
 
 function gravitationalConstant() {
-    document.getElementById("screen").value = 6.67430e-11; // Gravitational constant in m^3 kg^-1 s^-2
+    document.getElementById("screen").value = 6.67430e-11;
 }
 
 
 function convertToMeters() {
     let value = parseFloat(document.getElementById("screen").value);
-    document.getElementById("screen").value = value * 1000; // Convert to meters
+    document.getElementById("screen").value = value * 1000;
 }
 
 function convertToKilometers() {
     let value = parseFloat(document.getElementById("screen").value);
-    document.getElementById("screen").value = value / 1000; // Convert to kilometers
+    document.getElementById("screen").value = value / 1000; 
+}
+function arcsin() {
+    let value = parseFloat(document.getElementById("screen").value.trim());
+    let result = Math.asin(value);
+    result = (result * 180) / Math.PI;
+    document.getElementById("screen").value = result;
+}
+function arccos() {
+    let value = parseFloat(document.getElementById("screen").value.trim());
+    let result = Math.acos(value);
+    result = (result * 180) / Math.PI;
+    document.getElementById("screen").value = result;
 }
 
+function arctan() {
+    let value = parseFloat(document.getElementById("screen").value.trim());
+    let result = Math.atan(value);
+    result = (result * 180) / Math.PI;
+    document.getElementById("screen").value = result;
+}
 function transpose() {
-
     let matrixInput = document.getElementById("screen").value.trim();
-
     let matrix = parseMatrixInput(matrixInput);
     let transposedMatrix = transposeMatrix(matrix);
     let transposedMatrixString = formatMatrix(transposedMatrix);
@@ -113,44 +130,31 @@ function formatMatrix(matrix) {
     }
     return formattedMatrix.trim();
 }
-function inverse() {
+function determinant() {
     let matrixInput = document.getElementById("screen").value.trim();
     let matrix = parseMatrixInput(matrixInput);
     if (!isValidSquareMatrix(matrix)) {
-        alert("Invalid matrix input! The matrix must be square to compute its inverse.");
+        alert("Invalid matrix input! The matrix must be square to compute its determinant.");
         return;
     }
-    let det = determinant(matrix);
-    if (det === 0) {
-        alert("The determinant of the matrix is zero. It does not have an inverse.");
-        return;
-    }
-    let inverseMatrix = computeInverse(matrix, det);
-    let inverseMatrixString = formatMatrix(inverseMatrix);
-    document.getElementById("screen").value = inverseMatrixString;
+    let det = computeDeterminant(matrix);
+    document.getElementById("screen").value = det;
 }
-function isValidSquareMatrix(matrix) {
-    const numRows = matrix.length;
-    if (numRows === 0) return false;
-    const numCols = matrix[0].length;
-    if (numRows !== numCols) return false;
-    return true;
-}
-
-
-function determinant(matrix) {
-    
-    let det = 0; 
+function computeDeterminant(matrix) {
     return det;
 }
-function computeInverse(matrix, det) {
-    let inverseMatrix = []; 
-    return inverseMatrix;
+function cube() {
+    let num = parseFloat(document.getElementById("screen").value.trim());
+    let result = Math.pow(num, 3);
+    document.getElementById("screen").value = result;
 }
-function formatMatrix(matrix) {
-    let formattedMatrix = "";
-    for (let i = 0; i < matrix.length; i++) {
-        formattedMatrix += matrix[i].join("\t") + "\n";
-    }
-    return formattedMatrix.trim();
+function cubeRoot() {
+    let num = parseFloat(document.getElementById("screen").value.trim());
+    let result = Math.cbrt(num);
+    document.getElementById("screen").value = result;
+}
+function toDegrees() {
+    let radians = parseFloat(document.getElementById("screen").value.trim());
+    let degrees = (radians * 180) / Math.PI;
+    document.getElementById("screen").value = degrees;
 }
